@@ -1,11 +1,14 @@
-import React from 'react'
+"use client";
 
-const todoContext = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+import React, { createContext } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
-export default todoContext
+const TodoContext = createContext();
+
+export const todoContext = ({ children }) => {
+  const [todos, setTodos] = useLocalStorage("todos", [])
+
+  return <div></div>;
+};
+
+export default todoContext;
