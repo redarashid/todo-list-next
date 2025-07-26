@@ -14,7 +14,7 @@ const TodoList = () => {
             >
               <div className=" flex items-center gap-0 md:gap-4">
                 <div // Check icon
-                  className={  
+                  className={
                     todo.completed
                       ? " absolute md:static left-1 text-green-500 hidden md:block"
                       : " absolute md:static left-1 text-green-400 hidden md:block"
@@ -22,7 +22,20 @@ const TodoList = () => {
                 >
                   <LuCheckCircle2 />
                 </div>
-                <div className="flex-grow space-y-1 flex flex-col justify-start items-start "></div>
+                <div className="flex-grow space-y-1 flبex flex-col justify-start items-start">
+                  {categoryData && (
+                    <div
+                      className=" px-2 mb-1 text-sm py-1 inline-flex"
+                      style={{ backgroundColor: categoryData?.color }}
+                    >
+                      <span
+                        style={{ color: getTextColor(categoryData?.color) }}
+                      >
+                        {categoryData?.color}
+                      </span>
+                    </div>
+                  )}
+                </div>
               </div>
             </li>
           );
