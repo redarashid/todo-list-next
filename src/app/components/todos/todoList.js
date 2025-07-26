@@ -23,14 +23,14 @@ const TodoList = () => {
                   <LuCheckCircle2 />
                 </div>
                 <div className="flex-grow space-y-1 flبex flex-col justify-start items-start">
-                  {categoryData && (
+                  {categoryData && ( // Category
                     <div
                       className=" px-2 mb-1 text-sm py-1 inline-flex"
                       style={{ backgroundColor: categoryData?.color }}
                     >
                       <span
                         style={{ color: getTextColor(categoryData?.color) }}
-                      >
+                      > 
                         {categoryData?.color}
                       </span>
                     </div>
