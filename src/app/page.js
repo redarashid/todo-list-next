@@ -3,7 +3,7 @@ import { LuPlus } from "react-icons/lu";
 import { useTodos } from "../app/context/todoContext";
 
 export default function Home() {
-  const { openTodoModal, setOpenTodoModal } = useTodos();
+  const { openTodoModal, setOpenTodoModal, setEditeTodo, deleteTodo, setDeleteTodo, removeTodo } = useTodos();
   const closeTodoModal = () => {
     setOpenTodoModal(false);
   };
