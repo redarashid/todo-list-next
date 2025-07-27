@@ -22,7 +22,7 @@ const useLocalStorage = (key, initialValue) => {
         }
       }
     }
-  }, [isLoad, key]);
+  }, [key, initialValue, isLoad]);
 
   const setLocalStorageValue = (newValue) => {
     setValue(newValue); // Update state immediately

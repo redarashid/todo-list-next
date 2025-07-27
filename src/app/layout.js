@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { TodoProvider } from "./context/todoContext";
+import { Header } from "./components/header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +25,13 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <TodoProvider>
+          <div className=" flex flex-1 overflow-hidden select-none">
+            {/* Sidebar */}
+
+            <div className=" flex-1 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
+              <Header />
+            </div>
+          </div>
           {children}
         </TodoProvider>
       </body>
