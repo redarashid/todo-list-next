@@ -14,7 +14,12 @@ const useLocalStorage = (key, initialValue) => {
     if (isLoad) {
       const storedValue = localStorage.getItem(key); // Retrieve the value from localStorage
       if (storedValue && storedValue !== null && storedValue !== "undefined") {
-        setValue(JSON.parse(storedValue));
+        try {
+          setValue(JSON.parse(storedValue));
+        } catch (error) {
+          console.error('Error parsing localStorage value:', error);
+          setValue(initialValue);
+        }
       }
     }
   }, [isLoad, key]);
