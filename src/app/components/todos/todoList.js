@@ -1,5 +1,4 @@
 import { LuCheckCircle2 } from "react-icons/lu";
-import { useTodos } from "../../context/todoContext";
 
 const TodoList = () => {
   return (
@@ -30,7 +29,7 @@ const TodoList = () => {
                     >
                       <span
                         style={{ color: getTextColor(categoryData?.color) }}
-                      > 
+                      >
                         {categoryData?.color}
                       </span>
                     </div>
