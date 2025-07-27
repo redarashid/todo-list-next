@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
 import React, { useEffect, useState } from "react";
 
-const useLocalStorage = () => {
-  const [value, setValue] = useState(invalidate);
+const useLocalStorage = (key, initialValue) => {
+  const [value, setValue] = useState(initialValue);
   const [isLoad, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const useLocalStorage = () => {
         setValue(JSON.parse(storedValue));
       }
     }
-  }, [isLoad]);
+  }, [isLoad, key]);
 
   const setLocalStorageValue = (newValue) => {
     setValue(newValue); // Update state immediately
@@ -27,7 +27,6 @@ const useLocalStorage = () => {
   };
 
   return [value, setLocalStorageValue];
-
 };
 
 export default useLocalStorage;

@@ -20,11 +20,12 @@ const button = () => {
   return (
     <button
       onClick={onClick}
-      className={`${baseStyles} ${variants[variant]} ${className}`}>
+      className={`${baseStyles} ${variants[variant]} ${className}`}
+    >
       {icon && <span className=" mr-2">{icon}</span>}
       {children}
     </button>
   );
 };
 
-export default button;
+export default Button;

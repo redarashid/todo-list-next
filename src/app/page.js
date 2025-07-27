@@ -9,17 +9,18 @@ import AddTodoForm from "./components/todos/addTodoForm";
 import DeleteConfirmationModal from "./components/deleteConfirmationModal";
 
 export default function Home() {
+  // Home component
   const {
     openTodoModal,
     setOpenTodoModal,
-    setEditeTodo,
+    setEditTodo,
     deleteTodo,
     setDeleteTodo,
     removeTodo,
   } = useTodos();
   const closeTodoModal = () => {
     setOpenTodoModal(false);
-    setEditeTodo(null);
+    setEditTodo(null);
     setDeleteTodo(null);
   };
 
@@ -32,7 +33,7 @@ export default function Home() {
           Add Task
         </Button>
       </div>
-      <TodoList /> 
+      <TodoList />
 
       <Modal isOpen={openTodoModal} onClose={closeTodoModal}>
         <AddTodoForm />

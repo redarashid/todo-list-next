@@ -1,6 +1,7 @@
-import { LuCheckCircle2 } from "react-icons/lu";
-
+import { LuCheckCircle } from "react-icons/lu";
+import { useTodos } from "@/app/context/todoContext";
 const TodoList = () => {
+  const { todos } = useTodos();
   return (
     <>
       <ul className=" w-full max-auto space-y-2">
@@ -19,7 +20,7 @@ const TodoList = () => {
                       : " absolute md:static left-1 text-green-400 hidden md:block"
                   }
                 >
-                  <LuCheckCircle2 />
+                  {/* <LuCheckCircle2 /> */}
                 </div>
                 <div className="flex-grow space-y-1 flبex flex-col justify-start items-start">
                   {categoryData && ( // Category
