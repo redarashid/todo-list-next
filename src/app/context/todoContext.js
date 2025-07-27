@@ -1,7 +1,7 @@
 "use client";
 
-import React, { createContext, useState } from "react";
-import { useLocalStorage } from "../hooks/useLocalStorage";
+import useLocalStorage from "../hooks/useLocalStorage";
+import { createContext, useContext, useState } from "react";
 import { toast } from "react-toastify";
 
 const TodoContext = createContext();
@@ -14,76 +14,91 @@ export const TodoProvider = ({ children }) => {
     categoryId: null,
     completed: false,
   });
+  const [editTodo, setEditTodo] = useState(null);
+  const [deleteTodo, setDeleteTodo] = useState(null);
   const [openTodoModal, setOpenTodoModal] = useState(false);
-  const [editeTodo, setEditeTodo] = useState(null);
 
-  // Add Todo
+  // Add a new todo
   const addTodo = () => {
     if (!newTodo.title.trim()) {
       toast.error("Todo text is required.");
       return;
     }
-    if (newTodo.categoryId) {
-      toast.error("Category is required");
+    if (!newTodo.categoryId) {
+      toast.error("Category is required.");
       return;
     }
 
     const newTodoData = {
-      id: Date.now(), // Generate unique id
-      title: newTodo.title.trim(), // Remove leading and trailing spaces
-      description: newTodo.description.trim(), // Remove leading and trailing spaces
-      categoryId: newTodo.categoryId, // category id
-      completed: false, // default value
+      id: Date.now(),
+      title: newTodo.title.trim(),
+      description: newTodo.description.trim(),
+      categoryId: newTodo.categoryId,
+      completed: false,
     };
-    setTodos([...todos, newTodoData]); // Add new todo to todos array
+
+    setTodos([...todos, newTodoData]);
+    toast.success("Todo added successfully!");
     setNewTodo({
       title: "",
       description: "",
       categoryId: null,
       completed: false,
-    }); // Reset new todo
-    toast.success("Todo added successfully!"); // Show success message
-    setOpenTodoModal(false); // Close modal
+    });
+    setOpenTodoModal(false);
   };
 
-  // Update Todo
+  // Update an existing todo
   const updateTodo = () => {
-    if (!editeTodo) {
-      // If todo not found
-      toast.error("Todo not found"); // Show error message
+    if (!editTodo) {
+      toast.error("No todo selected for editing.");
       return;
     }
-    const updatedTodo = todos.map(
-      (
-        todo // Update Todo
-      ) => (todo.id === editeTodo.id ? editeTodo : todo) // If todo found update it
+
+    const updatedTodos = todos.map((todo) =>
+      todo.id === editTodo.id ? editTodo : todo
     );
-    setTodos(updatedTodo); // Update todos array
+
+    setTodos(updatedTodos);
     toast.success("Todo updated successfully!");
-    setEditeTodo(null);
+    setEditTodo(null);
+    setOpenTodoModal(false);
   };
 
-  // Delete Todo
-  const deleteTodo = (id) => {
-    const filterTodo = todos.filter((todo) => todo.id !== id);
-    setTodos(filterTodo);
+  // Remove a todo
+  const removeTodo = () => {
+    const filteredTodos = todos.filter((todo) => todo.id !== deleteTodo?.id);
+    setTodos(filteredTodos);
     toast.success("Todo deleted successfully!");
-    setOpenTodoModal(false);
+    setDeleteTodo(null);
+  };
+
+  // Toggle todo completion status
+  const toggleTodo = (id) => {
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    );
+    setTodos(updatedTodos);
+    const task = updatedTodos.find((task) => task.id === id);
+    toast.success(task?.completed ? "Marked as completed." : "Marked as Todo");
   };
 
   return (
     <TodoContext.Provider
       value={{
         todos,
+        newTodo,
+        setNewTodo,
         addTodo,
+        editTodo,
+        setEditTodo,
         updateTodo,
         deleteTodo,
+        setDeleteTodo,
+        removeTodo,
+        toggleTodo,
         openTodoModal,
         setOpenTodoModal,
-        editeTodo,
-        setEditeTodo,
-        removeTodo,
-        
       }}
     >
       {children}
@@ -91,4 +106,4 @@ export const TodoProvider = ({ children }) => {
   );
 };
 
-export default TodoProvider;
+export const useTodos = () => useContext(TodoContext);

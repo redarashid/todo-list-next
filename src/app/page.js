@@ -1,8 +1,19 @@
+"use client";
+
 import Button from "./components/button";
 import { LuPlus } from "react-icons/lu";
+import TodoList from "./components/todos/todoList";
+import { useTodos } from "./context/todoContext";
 
 export default function Home() {
-  const { openTodoModal, setOpenTodoModal, setEditeTodo, deleteTodo, setDeleteTodo, removeTodo } = useTodo();
+  const {
+    // openTodoModal,
+    setOpenTodoModal,
+    // setEditeTodo,
+    // deleteTodo,
+    // setDeleteTodo,
+    // removeTodo,
+  } = useTodos();
   const closeTodoModal = () => {
     setOpenTodoModal(false);
   };
@@ -15,6 +26,7 @@ export default function Home() {
           Add Task
         </Button>
       </div>
+      <TodoList />
     </div>
   );
 }
