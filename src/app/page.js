@@ -4,19 +4,25 @@ import Button from "./components/button";
 import { LuPlus } from "react-icons/lu";
 import TodoList from "./components/todos/todoList";
 import { useTodos } from "./context/todoContext";
+import Modal from "./components/modal";
+import AddTodoForm from "./components/todos/addTodoForm";
+import DeleteConfirmationModal from "./components/deleteConfirmationModal";
 
 export default function Home() {
   const {
-    // openTodoModal,
+    openTodoModal,
     setOpenTodoModal,
-    // setEditeTodo,
-    // deleteTodo,
-    // setDeleteTodo,
-    // removeTodo,
+    setEditeTodo,
+    deleteTodo,
+    setDeleteTodo,
+    removeTodo,
   } = useTodos();
   const closeTodoModal = () => {
     setOpenTodoModal(false);
+    setEditeTodo(null);
+    setDeleteTodo(null);
   };
+
   return (
     <div className=" p-4">
       <div className=" flex flex-wrap gap-4 md:gap-3 justify-between items-center mb-3 md:mb-4">
@@ -26,7 +32,18 @@ export default function Home() {
           Add Task
         </Button>
       </div>
-      <TodoList />
+      <TodoList /> 
+
+      <Modal isOpen={openTodoModal} onClose={closeTodoModal}>
+        <AddTodoForm />
+      </Modal>
+
+      <DeleteConfirmationModal // Delete confirmation modal
+        itemName={deleteTodo?.title} // Item name
+        onConfirm={removeTodo} // Remove todo
+        onClose={closeTodoModal} // Close modal
+        isOpen={deleteTodo} // Open modal
+      />
     </div>
   );
 }
