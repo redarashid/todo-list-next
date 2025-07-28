@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { LuMoon } from "react-icons/lu";
+import { LuSun } from "react-icons/lu";
+import { Tooltip } from "react-tooltip";
 
 const ThemeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -40,7 +42,18 @@ const ThemeToggle = () => {
         <LuMoon
           className={` text-xl ${isDarkMode ? "text-white" : "text-gray-400"}`}
         />
+        <div
+          className={` absolute w-5 h-5 bg-white dark:bg-gray-900 rounded-full shadow-md transition-transform duration-300 ${
+            isDarkMode ? " translate-x-7" : " translate-x-0"
+          }`}
+        ></div>
+        <LuSun
+          className={` text-xl ${
+            !isDarkMode ? " text-orange-400" : " text-gray-400"
+          }`}
+        />
       </div>
+      <Tooltip id="theme-tooltip" place="top" effect="solid" />
     </div>
   );
 };
