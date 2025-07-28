@@ -35,7 +35,7 @@ const ThemeToggle = () => {
         onClick={toggleTheme}
         data-tooltip-id="theme-tooltip"
         data-tooltip-content={
-          isDarkMode ? "Switch a light mode" : "Switch al dark mode"
+          isDarkMode ? "Switch to light mode" : "Switch to dark mode"
         }
         className={` relative px-1 inline-flex justify-between items-center w-14 h-7 bg-gray-300 dark:bg-gray-600 rounded-full cursor-pointer transition-all`}
       >
