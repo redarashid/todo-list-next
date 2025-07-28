@@ -1,10 +1,11 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
+import { LuMoon } from "react-icons/lu";
 
 const ThemeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // 
+  //
   useEffect(() => {
     const saveTheme = localStorage.getItem("theme");
     if (
@@ -18,7 +19,7 @@ const ThemeToggle = () => {
     }
   }, []);
 
-  const themeToggle = () => {
+  const toggleTheme = () => {
     const root = document.documentElement;
     const newTheme = isDarkMode ? "light" : "dark";
     setIsDarkMode(!isDarkMode);
@@ -28,7 +29,18 @@ const ThemeToggle = () => {
 
   return (
     <div className=" flex items-center gap-2">
-      <div></div>
+      <div
+        onClick={toggleTheme}
+        data-tooltip-id="theme-tooltip"
+        data-tooltip-content={
+          isDarkMode ? "Switch a light mode" : "Switch al dark mode"
+        }
+        className={` relative px-1 inline-flex justify-between items-center w-14 h-7 bg-gray-300 dark:bg-gray-600 rounded-full cursor-pointer transition-all`}
+      >
+        <LuMoon
+          className={` text-xl ${isDarkMode ? "text-white" : "text-gray-400"}`}
+        />
+      </div>
     </div>
   );
 };
