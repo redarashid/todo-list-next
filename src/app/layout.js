@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { TodoProvider } from "./context/todoContext";
 import Header from "./components/header";
+import SidebarMenu from "./components/sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
         <TodoProvider>
           <div className=" flex flex-1 overflow-hidden select-none">
             {/* Sidebar */}
+            <SidebarMenu />
 
             <div className=" flex-1 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
               <Header />
