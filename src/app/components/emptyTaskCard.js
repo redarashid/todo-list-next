@@ -6,8 +6,10 @@ import { useTodos } from "../context/todoContext";
 import { LuPlus } from "react-icons/lu";
 
 const EmptyTaskCard = () => {
+    // Empty Task Card
   const { setOpenTodoModal } = useTodos();
 
+  // Open Modal
   const openModal = () => {
     setOpenTodoModal(true);
   };
