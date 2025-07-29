@@ -15,6 +15,7 @@ import {
 } from "react-icons/lu";
 import { Tooltip } from "react-tooltip";
 
+// Sidebar menu component
 const SidebarMenu = ({
   name,
   icon,
@@ -40,9 +41,9 @@ const SidebarMenu = ({
   };
 
   return (
-    <li>
+    <li className=" pb-4">
       <div
-        className=" flex justify-between items-center hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:bg-opacity-30 rounded-md px-2 cursor-pointer"
+        className=" flex justify-between items-center hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:bg-opacity-30 rounded-md px-2 cursor-pointer "
         onClick={handleClick}
       >
         <div className=" flex items-center">
@@ -57,10 +58,11 @@ const SidebarMenu = ({
   );
 };
 
+// Menu items
 const menuItems = [
   {
     name: "My Tasks",
-    icon: <LuListTodo className="text-xl text-orange-400" />,
+    icon: <LuListTodo className=" text-xl text-orange-400 " />,
     path: "/",
   },
   {
@@ -93,6 +95,7 @@ const menuItems = [
   },
 ];
 
+// Sidebar component
 const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const toggleSidebar = () => setIsCollapsed(!isCollapsed);
@@ -103,7 +106,7 @@ const Sidebar = () => {
           isCollapsed ? " w-1 p-0 md:pt-20 md:p-4 md:w-16" : " p-4 w-64"
         } bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden`}
       >
-        <div className=" fixed top-3 h-10 bg-gray-500 bg-opacity-10p p-2 rounded-full left-3 justify-between items-center">
+        <div className=" fixed top-3 h-10 bg-gray-200 bg-opacity-10p p-2 rounded-full left-3 justify-between items-center">
           <div className=" cursor-pointer text-2xl text-orange-400">
             {isCollapsed ? (
               <LuChevronRight
