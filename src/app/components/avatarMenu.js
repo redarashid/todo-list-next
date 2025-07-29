@@ -2,22 +2,26 @@ import Image from "next/image";
 import React from "react";
 import { Dropdown, Space } from "antd";
 import { LuListTodo, LuList, LuDownload } from "react-icons/lu";
+import Link from "next/link";
 
 const items = [
   {
     key: "1",
     label: "My Tasks",
-    icon: <LuListTodo className=" text-xl" />,
+    icon: <LuListTodo className=" text-orange-400 text-xl" />,
+    Link: "/",
   },
   {
     key: "2",
     label: "Categories",
-    icon: <LuList className=" text-xl" />,
+    icon: <LuList className=" text-orange-400 text-xl" />,
+    Link: "/categories",
   },
   {
     key: "3",
     label: "Import/Export",
-    icon: <LuDownload className=" text-xl" />,
+    icon: <LuDownload className=" text-orange-400 text-xl" />,
+    Link: "/export",
   },
 ];
 const AvatarMenu = () => {
