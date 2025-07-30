@@ -1,7 +1,7 @@
 "use client";
 
 import useLocalStorage from "../hooks/useLocalStorage";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import { toast } from "react-toastify";
 
 const CategoryContext = createContext();

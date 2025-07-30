@@ -3,6 +3,7 @@ import "./globals.css";
 import { TodoProvider } from "./context/todoContext";
 import Header from "./components/header";
 import SidebarMenu from "./components/sidebar";
+import { CategoryProvider } from "./context/categoryCotext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,15 +27,17 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <TodoProvider>
-          <div className=" flex flex-1 overflow-hidden select-none">
-            {/* Sidebar */}
-            <SidebarMenu />
+          <CategoryProvider>
+            <div className=" flex flex-1 overflow-hidden select-none">
+              {/* Sidebar */}
+              <SidebarMenu />
 
-            <div className=" flex-1 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
-              <Header />
+              <div className=" flex-1 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
+                <Header />
+                {children}
+              </div>
             </div>
-          </div>
-          {children}
+          </CategoryProvider>
         </TodoProvider>
       </body>
     </html>
