@@ -4,6 +4,7 @@ import { LuPlus } from "react-icons/lu";
 import { useCategories } from "../../context/categoryCotext";
 import Modal from "@/app/components/modal";
 import AddEditCategoryForm from "@/app/components/todos/addEditCategoryForm";
+import DeleteConfirmationModal from "@/app/components/deleteConfirmationModal";
 
 const Categories = () => {
   const {
@@ -31,6 +32,12 @@ const Categories = () => {
       <Modal isOpen={openCategoryModal} onClick={closeCategoryModal}>
         <AddEditCategoryForm />
       </Modal>
+      <DeleteConfirmationModal
+        itemName={deleteCategory?.name}
+        isOpen={deleteCategory}
+        onClose={closeCategoryModal}
+        onConfirm={removeCategory}
+      />
     </div>
   );
 };

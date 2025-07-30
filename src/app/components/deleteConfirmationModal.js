@@ -1,9 +1,9 @@
 import React from 'react'
 
-const deleteConfirmationModal = () => {
+const DeleteConfirmationModal = () => {
   return (
-    <div>deleteConfirmationModal</div>
+    <div>DeleteConfirmationModal</div>
   )
 }
 
-export default deleteConfirmationModal
+export default DeleteConfirmationModal
