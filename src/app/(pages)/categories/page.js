@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Button from "../../components/button";
 import { LuPlus } from "react-icons/lu";

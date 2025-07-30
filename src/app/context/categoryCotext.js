@@ -11,6 +11,8 @@ const defaultCategories = [
   { id: 2, name: "Personal", color: "#FF5733" },
 ];
 
+const defaultColors = ["#D3D3D3", "#FF5733", "#33FF57", "#3357FF", "#FFC233"];
+
 export const CategoryProvider = ({ children }) => {
   const [categories, setCategories] = useLocalStorage("categories", []);
   const [editCategory, setEditCategory] = useState(null);
