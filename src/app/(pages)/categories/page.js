@@ -31,8 +31,12 @@ const Categories = () => {
           Add Category
         </Button>
       </div>
-      <Modal isOpen={openCategoryModal} onClick={closeCategoryModal}>
-        <AddEditCategoryForm />
+      <Modal
+        isOpen={openCategoryModal}
+        onClick={closeCategoryModal}
+        onClose={closeCategoryModal}
+      >
+        <AddEditCategoryForm onClose={closeCategoryModal} />
       </Modal>
       <DeleteConfirmationModal
         itemName={deleteCategory?.name}

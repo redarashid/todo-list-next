@@ -27,16 +27,16 @@ export default function Home() {
   return (
     <div className=" p-4">
       <div className=" flex flex-wrap gap-4 md:gap-3 justify-between items-center mb-3 md:mb-4">
-        <h1 className=" text-lg md:text-2xl font-semibold">My Tasks</h1>
+        <h1 className="text-lg md:text-2xl font-semibold">My Tasks</h1>
         <Button onClick={() => setOpenTodoModal(true)}>
-          <LuPlus className=" mr-2 text-xl" />
+          <LuPlus className="mr-2 text-xl" />
           Add Task
         </Button>
       </div>
       <TodoList />
 
       <Modal isOpen={openTodoModal} onClose={closeTodoModal}>
-        <AddTodoForm />
+        <AddTodoForm onClose={closeTodoModal} />
       </Modal>
 
       <DeleteConfirmationModal // Delete confirmation modal
