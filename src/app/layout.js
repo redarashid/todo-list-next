@@ -54,9 +54,10 @@ export default function RootLayout({ children }) {
               <div className=" flex-1 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
                 {/* Header */}
                 <Header />
-                <main className="min-h-screen overflow-hidden">
+                <main className="h-screen overflow-hidden relative">
                   <span
-                    className=" h-screen overflow-hidden text-black opacity-30 pointer-events-none fixed z-0 top-1/2 left-1/2 font-bold text-4xl -translate-x-1/2 translate-y-1/2"
+                    className="text-black opacity-30 pointer-events-none fixed z-0 
+                   top-1/2 left-1/2 font-bold text-4xl -translate-x-1/2 translate-y-1/2"
                   >
                     Innovating the Future, Today
                   </span>
