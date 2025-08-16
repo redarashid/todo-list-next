@@ -1,8 +1,9 @@
 "use client";
-import { useCategories } from "@/app/context/categoryCotext";
-import { useTodos } from "../../../app/context/todoContext";
-import { LuPlus } from "react-icons/lu";
+
 import Button from "../button";
+import { LuPlus } from "react-icons/lu";
+import { useTodos } from "../../context/todoContext";
+import { useCategories } from "../../context/categoryCotext";
 
 const AddTodoForm = () => {
   const { addTodo, editTodo, setEditTodo, newTodo, setNewTodo, updateTodo } =
@@ -13,77 +14,93 @@ const AddTodoForm = () => {
   const todoDescription = editTodo
     ? editTodo?.description
     : newTodo?.description ?? "";
-  const todoCategoryId = editTodo ? editTodo?.categoryId : newTodo?.categoryId;
+  const todoCategory = editTodo
+    ? editTodo?.categoryId
+    : newTodo?.categoryId ?? "";
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (editTodo) {
       updateTodo();
       return;
     }
+
     addTodo();
   };
+
   const handleOnChange = (name, value) => {
     if (editTodo) {
       setEditTodo({ ...editTodo, [name]: value });
       return;
-    } else {
-      setNewTodo({ ...newTodo, [name]: value });
     }
+
+    setNewTodo({ ...newTodo, [name]: value });
   };
+
   return (
     <form
       onSubmit={handleSubmit}
-      className=" flex flex-col space-y-3 max-w-md mx-auto p-4"
+      className="flex flex-col space-y-3 max-w-md mx-auto p-4"
     >
       {editTodo ? (
-        <h2 className=" text-xl text-orange-500 font-bold inline-flex gap-3 items-center">
-          <LuPlus />
-          Edite Task
+        <h2 className="text-xl text-orange-500 font-bold inline-flex gap-3 items-center">
+          <LuPlus /> Edit Task
         </h2>
       ) : (
-        <h2 className=" text-xl text-orange-500 font-bold inline-flex gap-3 items-center">
-          <LuPlus />
-          Add Task
+        <h2 className="text-xl text-orange-500 font-bold inline-flex gap-3 items-center">
+          <LuPlus /> Add Task
         </h2>
       )}
-      <div className=" flex flex-col justify-start items-start">
-        <lable htmlFor="todoTitle">Title</lable>
+
+      <div className="flex flex-col items-start justify-start">
+        <label htmlFor="todoTitle" className="font-normal mb-1">
+          Title
+        </label>
         <input
-          type="text"
           id="todoTitle"
+          type="text"
+          placeholder="Enter task title"
           value={todoTitle}
           onChange={(e) => handleOnChange("title", e.target.value)}
-          className=" border w-full rounded px-3 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:focus:ring-blue-400"
+          className="border w-full rounded px-3 py-2 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:focus:ring-blue-400"
         />
       </div>
-      <div className=" flex flex-col justify-start items-start">
-        <lable htmlFor="todoDescription">Description</lable>
-        <input
-          type="text"
+
+      <div>
+        <label htmlFor="todoDescription" className="font-normal mb-1">
+          Description
+        </label>
+        <textarea
           id="todoDescription"
+          placeholder="Enter task description"
           value={todoDescription}
           onChange={(e) => handleOnChange("description", e.target.value)}
-          className="border w-full rounded px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:focus:ring-blue-400"
+          className="border rounded w-full px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:focus:ring-blue-400"
         />
       </div>
-      <div className=" flex flex-col justify-start items-start">
-        <lable htmlFor="todoCategory">Category</lable>
+
+      <div className="flex flex-col items-start justify-start">
+        <label htmlFor="todoCategory" className="font-normal mb-1">
+          Category
+        </label>
         <select
           id="todoCategory"
-          value={todoCategoryId}
+          value={todoCategory}
           onChange={(e) => handleOnChange("categoryId", e.target.value)}
-          className="border w-full rounded px-3 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:focus:ring-blue-400"
+          className="border w-full rounded px-3 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:focus:ring-blue-400"
         >
-          <option value="">Select Category</option>
-          {categories.map((category) => (
-            <option key={category.id} value={category.id}>
-              {category.name}
-            </option>
-          ))}
+          <option value="">Select a category</option>
+          {categories &&
+            categories.map((cat) => (
+              <option key={cat.id} value={cat.id}>
+                {cat.name}
+              </option>
+            ))}
         </select>
       </div>
-      <div className=" block ml-auto mt-4">
+
+      <div className="block ml-auto mt-4">
         <Button type="submit">{editTodo ? "Update" : "Add"}</Button>
       </div>
     </form>

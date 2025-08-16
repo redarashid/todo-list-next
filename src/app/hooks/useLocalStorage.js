@@ -1,33 +1,28 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 const useLocalStorage = (key, initialValue) => {
   const [value, setValue] = useState(initialValue);
-  const [isLoad, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    setIsLoaded(true); // Ensure localStorage is accessed only after the component mounts
+    setIsLoaded(true);
   }, []);
 
   useEffect(() => {
-    if (isLoad) {
-      const storedValue = localStorage.getItem(key); // Retrieve the value from localStorage
+    if (isLoaded) {
+      const storedValue = localStorage.getItem(key);
       if (storedValue && storedValue !== null && storedValue !== "undefined") {
-        try {
-          setValue(JSON.parse(storedValue));
-        } catch (error) {
-          console.error('Error parsing localStorage value:', error);
-          setValue(initialValue);
-        }
+        setValue(JSON.parse(storedValue));
       }
     }
-  }, [key, initialValue, isLoad]);
+  }, [isLoaded, key]);
 
   const setLocalStorageValue = (newValue) => {
-    setValue(newValue); // Update state immediately
-    if (isLoad) {
-      localStorage.setItem(key, JSON.stringify(newValue)); // Update localStorage
+    setValue(newValue);
+    if (isLoaded) {
+      localStorage.setItem(key, JSON.stringify(newValue));
     }
   };
 
