@@ -2,7 +2,7 @@
 
 import { LuPlus } from "react-icons/lu"; // Import the Plus icon
 import Button from "./button";
-import { useCategories } from "@/context/categoryContext";
+import { useCategories } from "../context/categoryCotext";
 
 const EmptyCategoryCard = () => {
   const { setOpenCategoryModal } = useCategories();
