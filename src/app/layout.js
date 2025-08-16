@@ -2,11 +2,11 @@ import localFont from "next/font/local";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { TodoProvider } from "./context/todoContext";
-import Header from "./components/Header";
 import { CategoryProvider } from "./context/categoryCotext";
 import Sidebar from "./components/sidebar";
 import Footer from "./components/footer";
 import { Toaster } from "react-hot-toast";
+import Header from "./components/header";
 
 // Load local fonts
 const geistSans = localFont({
@@ -64,7 +64,7 @@ export default function RootLayout({ children }) {
                 <Footer />
               </div>
             </div>
-            <Toaster />
+            <Toaster position="bottom-center" reverseOrder={false} />
           </CategoryProvider>
         </TodoProvider>
       </body>
