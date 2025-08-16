@@ -2,7 +2,7 @@
 
 import useLocalStorage from "../hooks/useLocalStorage";
 import { createContext, useContext, useState } from "react";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 
 const TodoContext = createContext();
 
@@ -17,7 +17,7 @@ export const TodoProvider = ({ children }) => {
   const [editTodo, setEditTodo] = useState(null);
   const [deleteTodo, setDeleteTodo] = useState(null);
   const [openTodoModal, setOpenTodoModal] = useState(false);
- 
+
   // Add a new todo
   const addTodo = () => {
     if (!newTodo.title.trim()) {
