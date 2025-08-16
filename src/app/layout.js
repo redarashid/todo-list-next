@@ -55,7 +55,9 @@ export default function RootLayout({ children }) {
                 {/* Header */}
                 <Header />
                 <main className="min-h-screen overflow-hidden">
-                  <span className="text-black opacity-30 pointer-events-none fixed z-0 top-1/2 left-1/2 font-bold text-4xl -translate-x-1/2 translate-y-1/2">
+                  <span
+                    className=" h-screen overflow-hidden text-black opacity-30 pointer-events-none fixed z-0 top-1/2 left-1/2 font-bold text-4xl -translate-x-1/2 translate-y-1/2"
+                  >
                     Innovating the Future, Today
                   </span>
                   {children}

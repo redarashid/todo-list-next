@@ -76,7 +76,7 @@ const menuItems = [
   {
     name: "Contact US",
     icon: <LuContact className="text-xl text-orange-400" />,
-    path: "https://drive.google.com/file/d/17xPra-pjJUjS4wTg8t5e4s-Y1Obc71SC/view?usp=sharing",
+    path: "https://drive.google.com/file/d/1-HGL86BiEoxbQFoyaHifPCtuJ-cSLM_p/view?usp=sharing",
     target: "_blank",
   },
   {
