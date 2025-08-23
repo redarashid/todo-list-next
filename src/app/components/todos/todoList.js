@@ -3,12 +3,12 @@
 import { useTodos } from "../../context/todoContext";
 import {
   LuCheck,
-  LuCircleCheck,
+  LuCheckCircle2,
   LuPencil,
   LuTrash,
   LuUndo,
 } from "react-icons/lu";
-import EmptyTaskCard from "../../components/emptyTaskCard";
+import EmptyTaskCard from "../emptyTaskCard";
 import { useCategories } from "../../context/categoryCotext";
 import { getTextColor } from "../../utils/helper";
 import { Tooltip } from "react-tooltip";
@@ -53,7 +53,7 @@ const TodoList = () => {
                       : "absolute md:static left-1 text-gray-400 hidden md:block "
                   }
                 >
-                  <LuCircleCheck className="text-2xl" />
+                  <LuCheckCircle2 className="text-2xl" />
                 </div>
                 <div className="flex-grow space-y-1 flex flex-col justify-start items-start">
                   {categoryData && (
