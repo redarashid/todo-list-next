@@ -2,9 +2,6 @@
 
 A simple and efficient Todo List application built using Next.js 15 and React. This application allows users to manage their tasks, categories, and preferences with an intuitive and user-friendly interface.
 
-## Demo 
-[Todo List App - Live](https://shrikant9907.github.io/todo-list-next-js-15)
-
 ## Features
 
 - **My Tasks Page**: View and manage all your todos in one place.
@@ -49,42 +46,8 @@ A simple and efficient Todo List application built using Next.js 15 and React. T
 
 ## Created By
 
-**Shrikant Yadav**  
-Full Stack Web Developer  
-[LinkedIn Profile](https://www.linkedin.com/in/shrikant9907/)
+**Rashid Reda**  
+Front-end Web Developer  
+[LinkedIn Profile](https://www.linkedin.com/in/rashid-reda-4048a5314/)
 
-## Training Programs
 
-We provide the following training programs in Web Design and Development:
-
-- **MERN Stack Development**: [Learn More](https://shrimo.com/courses/web-development/full-stack-web-dev-basic-to-advanced)
-- **Full Stack Development**: [Learn More](https://shrimo.com/courses/web-development/full-stack-web-dev-basic-to-advanced)
-- **React JS Development**: [Learn More](https://shrimo.com/courses/web-development/frontend-react-js-mastery-basic-to-advanced)
-- **Node JS Development**: [Learn More](https://shrimo.com/courses/web-development/full-stack-web-dev-basic-to-advanced)
-
-Programs range from 3 months to 1 year. 
-
-For more information on training, feel free to contact me.
-
-## Web Developer Services
-
-We also offer Web Developer services, including custom web development, design, and consultation for various projects.
-
-## Contact Details
-
-- Email: [info.shrimo@gmail.com](mailto:info.shrimo@gmail.com)
-- Phone: +91 9907472038
-- Location: Near Gas Godown, Collectorate Main Road, Kothi Bazar, Narmadapuram, (M.P.)
-
-For services or training, contact us at:
-
-- **Company Name**: Shrimo Innovations Pvt Ltd
-- **Website**: [https://shrimo.com/](https://shrimo.com/)
-
-## Online/Offline Training
-
-Looking to advance your web development career? Join our online and offline training programs available in Hoshangabad (Narmadapuram) and beyond. Learn everything from basic to advanced concepts in Full Stack and MERN Stack development with practical hands-on projects. Enroll today and start building your career!
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
