@@ -20,23 +20,23 @@ A simple and efficient Todo List application built using Next.js 15 and React. T
 
 ## Screenshot of Each Page
 
-### My Tasks Page
-![My Tasks Page](./public/images/todo-list-next-js-15-tasks-list.png)
+<!-- ### My Tasks Page
+[My Tasks Page](./public/images/todo-list-next-js-15-tasks-list.png)
 
 ### Categories Page (Dark Mode)
-![Categories Page (Dark Mode)](./public/images/todo-list-next-js-15-category-list-dark-mode.png)
+[Categories Page (Dark Mode)](./public/images/todo-list-next-js-15-category-list-dark-mode.png)
 
 ### Categories Page (Light Mode)
-![Categories Page (Light Mode)](./public/images/todo-list-next-js-15-category-list-light-mode.png)
+[Categories Page (Light Mode)](./public/images/todo-list-next-js-15-category-list-light-mode.png)
 
 ### Add Category Modal
-![Add Category Modal](./public/images/todo-list-next-js-15-add-category-modal.png)
+[Add Category Modal](./public/images/todo-list-next-js-15-add-category-modal.png)
 
 ### Edit Category Modal
-![Edit Category Modal](./public/images/todo-list-next-js-15-edit-category-modal.png)
+[Edit Category Modal](./public/images/todo-list-next-js-15-edit-category-modal.png)
 
 ### Edit Task Modal
-![Edit Task Modal](./public/images/todo-list-next-js-15-edit-task-modal.png)
+[Edit Task Modal](./public/images/todo-list-next-js-15-edit-task-modal.png) -->
 
 ## Built With
 
@@ -49,5 +49,3 @@ A simple and efficient Todo List application built using Next.js 15 and React. T
 **Rashid Reda**  
 Front-end Web Developer  
 [LinkedIn Profile](https://www.linkedin.com/in/rashid-reda-4048a5314/)
-
-
