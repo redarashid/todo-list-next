@@ -38,8 +38,7 @@ export default function ThemeToggle() {
         data-tooltip-content={
           isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"
         } // Updated tooltip
-        className={`relative px-1 inline-flex justify-between items-center w-14 h-7  bg-gray-300 dark:bg-gray-600 rounded-full cursor-pointer transition-all`}
-      >
+        className={`relative px-1 inline-flex justify-between items-center w-14 h-7  bg-gray-300 dark:bg-gray-600 rounded-full cursor-pointer transition-all`}>
         {/* Moon Icon with Tooltip */}
         <LuMoon
           className={`text-xl ${isDarkMode ? "text-white" : "text-gray-400"}`}
@@ -48,8 +47,7 @@ export default function ThemeToggle() {
         <div
           className={`absolute w-5 h-5 bg-white dark:bg-gray-900 rounded-full shadow-md transition-transform duration-300 ${
             isDarkMode ? "translate-x-7" : "translate-x-0"
-          }`}
-        ></div>
+          }`}></div>
 
         {/* Sun Icon with Tooltip */}
         <LuSun

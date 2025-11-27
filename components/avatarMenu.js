@@ -23,9 +23,7 @@ export default function AvatarMenu() {
     <div className="relative z-20">
       {/* Avatar */}
       <Image
-        src={`${
-          process.env.NEXT_PUBLIC_BASE_PATH || ""
-        }/images/profile.jpg`}
+        src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/profile.jpg`}
         alt="User Avatar"
         width={40}
         height={40}
@@ -41,13 +39,11 @@ export default function AvatarMenu() {
             {menuOptions.map((option, index) => (
               <li
                 key={index}
-                className=" rounded-md px-2 py-2 hover:bg-gray-100 dark:hover:bg-opacity-50 dark:hover:bg-gray-600 cursor-pointer"
-              >
+                className=" rounded-md px-2 py-2 hover:bg-gray-100 dark:hover:bg-opacity-50 dark:hover:bg-gray-600 cursor-pointer">
                 <Link
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center"
-                  href={option?.link}
-                >
+                  href={option?.link}>
                   {option.icon}
                   <span className="ml-2 text-sm">{option.name}</span>
                 </Link>

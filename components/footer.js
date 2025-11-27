@@ -13,8 +13,7 @@ export default function Footer() {
         Made with <span className="text-red-500">❤️</span> by{" "}
         <Link
           target="_blank"
-          href={"https://www.linkedin.com/in/rashid-reda-4048a5314/"}
-        >
+          href={"https://www.linkedin.com/in/rashid-reda-4048a5314/"}>
           Rashid Reda
         </Link>
       </p>
