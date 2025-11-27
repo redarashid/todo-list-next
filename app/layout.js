@@ -35,8 +35,12 @@ export const metadata = {
   keywords: "todo app, task management, next.js, tailwind css, productivity",
   author: "Shrikant Yadav",
   robots: "index, follow",
-  viewport: "width=device-width, initial-scale=1.0",
   charset: "UTF-8",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1.0,
 };
 
 export default function RootLayout({ children }) {
